@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:setstate1/constant.dart';
 import 'package:setstate1/Pages/secondPage.dart';
+import 'package:setstate1/counterModel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,7 +23,13 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("$sayac", style: const TextStyle(fontSize: 60)),
+            Consumer<counterModel>(
+                builder: (context, counterModelObject, child) {
+              return Text(
+                "${counterModelObject.sayaciOku()}",
+                style: const TextStyle(fontSize: 60),
+              );
+            }),
             InkWell(
                 onTap: () {
                   Navigator.push(
