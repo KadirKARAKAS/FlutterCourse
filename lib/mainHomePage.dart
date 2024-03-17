@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:setstate1/MobxPages/MobXHomeP.dart';
+import 'package:setstate1/MobxPages/mobXHomeP.dart';
 
 import 'ProviderPages/providerHomePage.dart';
 

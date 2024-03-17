@@ -17,7 +17,7 @@ class MobXHomeP extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "$sayac2",
+              "sayac2",
               style: TextStyle(fontSize: 55),
             ),
             const SizedBox(height: 10),

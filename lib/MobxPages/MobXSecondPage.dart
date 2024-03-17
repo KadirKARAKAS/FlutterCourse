@@ -15,7 +15,7 @@ class MobXSecondPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("$sayac2", style: TextStyle(fontSize: 55)),
+            Text("sayac2", style: TextStyle(fontSize: 55)),
             GestureDetector(
               onTap: () {},
               child: Container(
