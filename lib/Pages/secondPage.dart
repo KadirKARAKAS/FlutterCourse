@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:setstate1/counterModel.dart';
 
 import '../constant.dart';
 
@@ -14,33 +16,39 @@ class SecondPage extends StatelessWidget {
       ),
       body: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text("AA", style: const TextStyle(fontSize: 24)),
-        InkWell(
-            onTap: () {},
-            child: Container(
-              width: 90,
-              height: 40,
-              color: Colors.grey,
-              child: const Center(
-                child: Text(
-                  "Sayaç Arttır",
-                  style: TextStyle(fontSize: 16),
-                ),
-              ),
-            )),
+        Consumer<counterModel>(builder: (context, counterModelObject, child) {
+          return Text(
+            "${counterModelObject.sayaciOku()}",
+            style: const TextStyle(fontSize: 60),
+          );
+        }),
+        Consumer<counterModel>(builder: (context, counterModelObject, child) {
+          return GestureDetector(
+              onTap: () {
+                counterModelObject.countIncrease();
+              },
+              child: Container(
+                  width: 90,
+                  height: 40,
+                  color: Colors.grey,
+                  child: const Center(
+                      child: Text("Sayaç Arttır",
+                          style: TextStyle(fontSize: 16)))));
+        }),
         const SizedBox(height: 10),
-        InkWell(
-            onTap: () {},
-            child: Container(
-              width: 90,
-              height: 40,
-              color: Colors.grey,
-              child: const Center(
-                  child: Text(
-                "Sayaç Azalt",
-                style: TextStyle(fontSize: 16),
-              )),
-            )),
+        Consumer<counterModel>(builder: (context, counterModelObject, child) {
+          return GestureDetector(
+              onTap: () {
+                counterModelObject.countReduce();
+              },
+              child: Container(
+                  width: 90,
+                  height: 40,
+                  color: Colors.grey,
+                  child: const Center(
+                      child: Text("Sayaç Azalt",
+                          style: TextStyle(fontSize: 16)))));
+        }),
       ])),
     );
   }

@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("AA", style: const TextStyle(fontSize: 24)),
+            Text("$sayac", style: const TextStyle(fontSize: 60)),
             InkWell(
                 onTap: () {
                   Navigator.push(
