@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:setstate1/constant.dart';
-import 'package:setstate1/secondPage.dart';
+import 'package:setstate1/Pages/secondPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("$sayac", style: const TextStyle(fontSize: 24)),
+            Text("AA", style: const TextStyle(fontSize: 24)),
             InkWell(
                 onTap: () {
                   Navigator.push(

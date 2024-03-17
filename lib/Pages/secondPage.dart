@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constant.dart';
+import '../constant.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -14,7 +14,7 @@ class SecondPage extends StatelessWidget {
       ),
       body: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text("$sayac", style: const TextStyle(fontSize: 24)),
+        Text("AA", style: const TextStyle(fontSize: 24)),
         InkWell(
             onTap: () {},
             child: Container(
