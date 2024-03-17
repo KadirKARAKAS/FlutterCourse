@@ -3,8 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:setstate1/ProviderPages/providerSecondPage.dart';
 import 'package:setstate1/ProviderPages/counterModel.dart';
 
-import '../MobxPages/MobXHomeP.dart';
-
 class ProviderHomePage extends StatefulWidget {
   const ProviderHomePage({super.key});
 
