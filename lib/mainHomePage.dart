@@ -47,7 +47,7 @@ class _MainHomePageState extends State<MainHomePage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const MobXHomeP(),
+                      builder: (context) => MobXHomeP(),
                     ));
               },
               child: Container(

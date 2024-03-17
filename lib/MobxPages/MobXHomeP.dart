@@ -1,9 +1,13 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:setstate1/MobxPages/MobXSecondPage.dart';
-import 'package:setstate1/constant.dart';
+import 'package:setstate1/MobxPages/mobXCounterModel.dart';
 
 class MobXHomeP extends StatelessWidget {
-  const MobXHomeP({super.key});
+  MobXHomeP({super.key});
+  var counterModel = mobXModel();
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +20,10 @@ class MobXHomeP extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "sayac2",
-              style: TextStyle(fontSize: 55),
-            ),
+            Observer(builder: (_) {
+              return Text("${counterModel.sayac2}",
+                  style: TextStyle(fontSize: 55));
+            }),
             const SizedBox(height: 10),
             GestureDetector(
               onTap: () {
