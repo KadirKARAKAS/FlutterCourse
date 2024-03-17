@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:setstate1/counterModel.dart';
+import 'package:setstate1/ProviderPages/counterModel.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -13,10 +13,10 @@ class SecondPage extends StatelessWidget {
         backgroundColor: Colors.grey,
       ),
       body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          child: Column(children: [
         Consumer<counterModel>(builder: (context, counterModelObject, child) {
           return Text(
-            "${counterModelObject.sayaciOku()}",
+            "Provider:${counterModelObject.sayaciOku()}",
             style: const TextStyle(fontSize: 60),
           );
         }),
