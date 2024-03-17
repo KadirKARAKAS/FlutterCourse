@@ -1,0 +1,1 @@
+int sayac=0;
