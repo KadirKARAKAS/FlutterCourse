@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:setstate1/counterModel.dart';
 
-import '../constant.dart';
-
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
 
