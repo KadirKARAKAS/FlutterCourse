@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:setstate1/ProviderPages/counterModel.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+class ProviderSecondPage extends StatelessWidget {
+  const ProviderSecondPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +13,15 @@ class SecondPage extends StatelessWidget {
         backgroundColor: Colors.grey,
       ),
       body: Center(
-          child: Column(children: [
-        Consumer<counterModel>(builder: (context, counterModelObject, child) {
-          return Text(
-            "Provider:${counterModelObject.sayaciOku()}",
-            style: const TextStyle(fontSize: 60),
-          );
-        }),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Consumer<counterModel>(
+          builder: (context, counterModelObject, child) {
+            return Text(
+              "${counterModelObject.sayaciOku()}",
+              style: const TextStyle(fontSize: 55),
+            );
+          },
+        ),
         Consumer<counterModel>(builder: (context, counterModelObject, child) {
           return GestureDetector(
               onTap: () {

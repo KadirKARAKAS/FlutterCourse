@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:setstate1/ProviderPages/homePage.dart';
 import 'package:setstate1/ProviderPages/counterModel.dart';
+
+import 'mainHomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         title: 'My App',
-        home: HomePage(),
+        home: MainHomePage(),
       ),
     );
   }

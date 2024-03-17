@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:setstate1/MobxPages/MobXSecondPage.dart';
 import 'package:setstate1/constant.dart';
 
-class MobXHomeP extends StatelessWidget {
-  const MobXHomeP({super.key});
+class MobXSecondPage extends StatelessWidget {
+  const MobXSecondPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,27 +15,30 @@ class MobXHomeP extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "$sayac2",
-              style: TextStyle(fontSize: 55),
-            ),
-            const SizedBox(height: 10),
+            Text("$sayac2", style: TextStyle(fontSize: 55)),
             GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MobXSecondPage(),
-                    ));
-              },
+              onTap: () {},
               child: Container(
                 width: 90,
                 height: 40,
                 color: Colors.grey,
                 child: const Center(
-                    child: Text("Geçiş Yap", style: TextStyle(fontSize: 16))),
+                    child:
+                        Text("Sayaç Arttır", style: TextStyle(fontSize: 16))),
               ),
-            )
+            ),
+            const SizedBox(height: 10),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                width: 90,
+                height: 40,
+                color: Colors.grey,
+                child: const Center(
+                    child:
+                        Text("Sayaç Azalat", style: TextStyle(fontSize: 16))),
+              ),
+            ),
           ],
         ),
       ),
