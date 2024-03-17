@@ -23,7 +23,7 @@ class SecondPage extends StatelessWidget {
               color: Colors.grey,
               child: const Center(
                 child: Text(
-                  "Geçiş yap",
+                  "Sayaç Arttır",
                   style: TextStyle(fontSize: 16),
                 ),
               ),
@@ -37,7 +37,7 @@ class SecondPage extends StatelessWidget {
               color: Colors.grey,
               child: const Center(
                   child: Text(
-                "Arttır",
+                "Sayaç Azalt",
                 style: TextStyle(fontSize: 16),
               )),
             )),
