@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:setstate1/Bloc/blocCubit.dart';
 
 class BlockSecondPage extends StatelessWidget {
   const BlockSecondPage({super.key});
@@ -14,9 +16,15 @@ class BlockSecondPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("data"),
+            BlocBuilder<blocCubit, int>(
+              builder: (context, counterAmount) {
+                return Text("$counterAmount");
+              },
+            ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                context.read<blocCubit>().blockCounterUp();
+              },
               child: Container(
                 width: 90,
                 height: 40,
@@ -28,7 +36,9 @@ class BlockSecondPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                context.read<blocCubit>().blockCounterDown();
+              },
               child: Container(
                 width: 90,
                 height: 40,
