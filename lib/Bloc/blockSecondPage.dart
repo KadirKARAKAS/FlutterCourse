@@ -17,8 +17,11 @@ class BlockSecondPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BlocBuilder<blocCubit, int>(
-              builder: (context, counterAmount) {
-                return Text("$counterAmount");
+              builder: (context, blockCount) {
+                return Text(
+                  "$blockCount",
+                  style: TextStyle(fontSize: 55),
+                );
               },
             ),
             GestureDetector(

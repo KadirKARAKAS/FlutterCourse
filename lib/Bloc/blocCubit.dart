@@ -5,11 +5,11 @@ class blocCubit extends Cubit<int> {
 
   void blockCounterUp() {
     int blockCount = state + 1;
-    emit(state);
+    emit(blockCount);
   }
 
   void blockCounterDown() {
     int blockCount = state - 1;
-    emit(state);
+    emit(blockCount);
   }
 }

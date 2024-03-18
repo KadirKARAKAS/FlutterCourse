@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:setstate1/Bloc/blockSecondPage.dart';
+
+import 'blocCubit.dart';
 
 class BlocHomePage extends StatelessWidget {
   const BlocHomePage({super.key});
@@ -15,7 +18,14 @@ class BlocHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("data"),
+            BlocBuilder<blocCubit, int>(
+              builder: (context, blockCount) {
+                return Text(
+                  "$blockCount",
+                  style: TextStyle(fontSize: 55),
+                );
+              },
+            ),
             const SizedBox(height: 10),
             GestureDetector(
               onTap: () {
