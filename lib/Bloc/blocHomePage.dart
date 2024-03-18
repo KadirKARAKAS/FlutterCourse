@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:setstate1/Bloc/blockSecondPage.dart';
-import 'package:setstate1/MobxPages/MobXSecondPage.dart';
 
 class BlocHomePage extends StatelessWidget {
   const BlocHomePage({super.key});
