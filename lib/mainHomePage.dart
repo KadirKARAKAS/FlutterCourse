@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:setstate1/BlocPattern/homePage.dart';
 import 'package:setstate1/MobxPages/mobXHomeP.dart';
 
 import 'Bloc/blocHomePage.dart';
@@ -62,7 +63,7 @@ class _MainHomePageState extends State<MainHomePage> {
                 )),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -78,6 +79,26 @@ class _MainHomePageState extends State<MainHomePage> {
                 child: const Center(
                     child: Text(
                   "Bloc",
+                  style: TextStyle(fontSize: 16),
+                )),
+              ),
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BlockPaternHomePage(),
+                    ));
+              },
+              child: Container(
+                width: 90,
+                height: 40,
+                color: Colors.grey,
+                child: const Center(
+                    child: Text(
+                  "BlocPattern",
                   style: TextStyle(fontSize: 16),
                 )),
               ),
