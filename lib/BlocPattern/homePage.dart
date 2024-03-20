@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:setstate1/BlocPattern/patternCubic.dart';
 
 class BlockPaternHomePage extends StatefulWidget {
   const BlockPaternHomePage({super.key});
@@ -10,7 +13,6 @@ class BlockPaternHomePage extends StatefulWidget {
 class _BlockPaternHomePageState extends State<BlockPaternHomePage> {
   var text1 = TextEditingController();
   var text2 = TextEditingController();
-  int sonuc = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,12 @@ class _BlockPaternHomePageState extends State<BlockPaternHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(sonuc.toString(), style: const TextStyle(fontSize: 55)),
+              BlocBuilder<PatternCubit, int>(
+                builder: (context, total) {
+                  return Text(total.toString(),
+                      style: const TextStyle(fontSize: 55));
+                },
+              ),
               TextField(
                 controller: text1,
                 decoration: const InputDecoration(hintText: "Number1"),
@@ -43,10 +50,9 @@ class _BlockPaternHomePageState extends State<BlockPaternHomePage> {
                     onTap: () {
                       String alinanSayi1 = text1.text;
                       String alinanSayi2 = text2.text;
-                      int sayi1 = int.parse(alinanSayi1);
-                      int sayi2 = int.parse(alinanSayi2);
-                      int total = sayi1 + sayi2;
-                      print(total);
+                      context
+                          .read<PatternCubit>()
+                          .toplama(alinanSayi1, alinanSayi2);
                     },
                     child: Container(
                       width: 90,
@@ -58,12 +64,11 @@ class _BlockPaternHomePageState extends State<BlockPaternHomePage> {
                   const SizedBox(width: 10),
                   InkWell(
                     onTap: () {
-                      String alinanSayi3 = text1.text;
-                      String alinanSayi4 = text2.text;
-                      int sayi1 = int.parse(alinanSayi3);
-                      int sayi2 = int.parse(alinanSayi4);
-                      int total = sayi1 * sayi2;
-                      sonuc = total;
+                      String alinanSayi1 = text1.text;
+                      String alinanSayi2 = text2.text;
+                      context
+                          .read<PatternCubit>()
+                          .carpma(alinanSayi1, alinanSayi2);
                     },
                     child: Container(
                       width: 90,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:setstate1/Bloc/blocCubit.dart';
+import 'package:setstate1/BlocPattern/patternCubic.dart';
 import 'package:setstate1/ProviderPages/counterModel.dart';
 
 import 'mainHomePage.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => counterModel(),
         ),
+        BlocProvider(
+          create: (context) => PatternCubit(),
+        )
       ],
       child: const MaterialApp(
         title: 'My App',
@@ -29,14 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-// import 'package:flutter/material.dart';
-// import 'package:setstate1/Pages/homePage.dart';
-
-// void main() {
-//   runApp(const MaterialApp(
-//     debugShowCheckedModeBanner: false,
-//     home: HomePage(),
-//   ));
-// }
