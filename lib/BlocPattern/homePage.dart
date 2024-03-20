@@ -13,7 +13,6 @@ class BlockPaternHomePage extends StatefulWidget {
 class _BlockPaternHomePageState extends State<BlockPaternHomePage> {
   var text1 = TextEditingController();
   var text2 = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +77,7 @@ class _BlockPaternHomePageState extends State<BlockPaternHomePage> {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
