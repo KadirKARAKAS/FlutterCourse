@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:setstate1/PersonsApp/Pages/addPersonPage.dart';
 
 class PersonHomePage extends StatefulWidget {
   const PersonHomePage({super.key});
@@ -20,6 +21,17 @@ class _PersonHomePageState extends State<PersonHomePage> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [],
       )),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AddPersonPage(),
+                )).then((value) => {
+                  print("Deneme"),
+                });
+          },
+          child: const Icon(Icons.add)),
     );
   }
 }
